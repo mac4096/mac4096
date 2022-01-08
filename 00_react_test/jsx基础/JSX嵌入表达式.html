@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="./lib/react.development.js"></script>
+  <script src="./lib/react-dom.development.js"></script>
+  <script src="./lib/babel.min.js"></script>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/babel">
+    class App extends React.Component {
+      constructor(props){
+        super(props)
+        this.state = {
+          a:1,
+          b:'sss',
+          c:'ssss',
+          isShow:true
+        }
+      }
+
+      render(){
+        return (
+          <div>
+            <h2>{this.state.a+1}</h2>
+            <h2>{this.state.isShow ? this.state.c:null}</h2>
+            <h2>{this.showA()}</h2>
+          </div>
+        )
+      }
+
+      showA(){
+        return 'a'
+      }
+    }
+
+    ReactDOM.render(<App/>,document.getElementById('app'))
+  </script>
+</body>
+</html>
